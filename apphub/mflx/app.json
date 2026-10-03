@@ -1,0 +1,127 @@
+{
+    "appid": -1,
+    "appname": "mflx",
+    "apptitle": "MFLX 面板",
+    "apptype": "Tools",
+    "appTypeCN": "实用工具",
+    "appversion": [
+        {
+            "m_version": "latest",
+            "s_version": []
+        }
+    ],
+    "appdesc": "Minecraft 开服器管理面板：服务器管理、远程 API、整合包一键安装，支持宝塔 Docker 一键部署。",
+    "appstatus": 1,
+    "home": "https://MFLX.p8.ink",
+    "help": "https://MFLX.p8.ink",
+    "updateat": 1790899200,
+    "depend": null,
+    "field": [
+        {
+            "attr": "domain",
+            "name": "域名",
+            "type": "textarea",
+            "default": "",
+            "suffix": "浏览器访问的域名,非必填",
+            "unit": ""
+        },
+        {
+            "attr": "allow_access",
+            "name": "允许外部访问",
+            "type": "checkbox",
+            "default": true,
+            "suffix": "允许直接通过主机IP+端口访问，如果您设置了域名请不要勾选这里",
+            "unit": ""
+        },
+        {
+            "attr": "mflx_image",
+            "name": "镜像地址",
+            "type": "string",
+            "default": "mflx/mcpanel:latest",
+            "suffix": "MFLX 面板镜像，私有仓库请填完整地址，如 docker.io/你的账号/mflx-mcpanel:latest",
+            "unit": ""
+        },
+        {
+            "attr": "web_port",
+            "name": "面板 Web 端口",
+            "type": "number",
+            "default": 8080,
+            "suffix": "面板管理界面端口",
+            "unit": ""
+        },
+        {
+            "attr": "api_port",
+            "name": "远程 API 端口",
+            "type": "number",
+            "default": 8570,
+            "suffix": "远程 API 端口，按需开启",
+            "unit": ""
+        },
+        {
+            "attr": "cpus",
+            "name": "cpu核心数限制",
+            "type": "number",
+            "default": 0,
+            "suffix": "0为不限制",
+            "unit": ""
+        },
+        {
+            "attr": "memory_limit",
+            "name": "内存限制",
+            "type": "number",
+            "default": 0,
+            "suffix": "0为不限制",
+            "unit": ""
+        }
+    ],
+    "env": [
+        {
+            "key": "mflx_image",
+            "type": "string",
+            "default": null,
+            "desc": "镜像地址"
+        },
+        {
+            "key": "web_port",
+            "type": "port",
+            "default": null,
+            "desc": "面板 Web 端口"
+        },
+        {
+            "key": "api_port",
+            "type": "port",
+            "default": null,
+            "desc": "远程 API 端口"
+        },
+        {
+            "key": "app_path",
+            "type": "path",
+            "default": null,
+            "desc": "应用数据目录"
+        },
+        {
+            "key": "host_ip",
+            "type": "string",
+            "default": null,
+            "desc": "主机IP"
+        },
+        {
+            "key": "cpus",
+            "type": "number",
+            "default": null,
+            "desc": "CPU核心数限制"
+        },
+        {
+            "key": "memory_limit",
+            "type": "number",
+            "default": null,
+            "desc": "内存大小限制"
+        }
+    ],
+    "volumes": {
+        "data": {
+            "type": "path",
+            "desc": "面板数据目录（配置/服务器/Java/隧道）"
+        }
+    }
+}
